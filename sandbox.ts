@@ -1,11 +1,19 @@
-const character = "mario";
+let character = "mario";
+let age = 30;
+let isBlackBelt = false;
 
-console.log(character);
+// character = 20; // error
+character = "luigi"; // no error
 
-const inputs = document.querySelectorAll("input");
+// age = "yoshi"; // error
+age = 40; // no error
 
-console.log(inputs);
+// isBlackBelt = "yes"; // error
+isBlackBelt = true; // no error
 
-inputs.forEach((input) => {
-  console.log(input);
-});
+const circ = (diameter: number) => {
+  return diameter * Math.PI;
+};
+
+// circ("hello"); // error
+console.log(circ(7.5)); // no error
