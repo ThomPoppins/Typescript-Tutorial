@@ -1,10 +1,13 @@
 "use strict";
 // Classes
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number; // public is default
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     Invoice.prototype.format = function () {
         return "".concat(this.client, " owes $").concat(this.amount, " for ").concat(this.details);
@@ -17,11 +20,9 @@ var invoices = [];
 // invoices.push("hello"); // Error
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
-invOne.client = "yoshi";
-// invTwo.amount = "hello"; // Error
-invTwo.amount = 400;
-console.log(invOne, invTwo);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
 var form = document.querySelector(".new-item-form");
 // inputs
 var type = document.querySelector("#type");
