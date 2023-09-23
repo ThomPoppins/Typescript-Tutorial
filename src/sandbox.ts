@@ -1,21 +1,14 @@
-let greet: Function;
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
 
-// greet = "hello"; // Error: Type 'string' is not assignable to type '() => void'
-
-greet = () => console.log("Hello, again!");
-greet();
-
-// If a function doesn't return anything, it's return type is void
-const add = (a: number, b: number, c: number | string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
 };
 
-add(5, 10, 20);
-
-const minus = (a: number, b: number): number => {
-  return a - b;
+const greet = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
 };
 
-let result = minus(10, 7);
-console.log(result);
+const greetAgain = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
