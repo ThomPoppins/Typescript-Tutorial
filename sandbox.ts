@@ -1,39 +1,44 @@
+// Explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+
+// age = "luigi"; // Error
+age = 30;
+
+// isLoggedIn = 25; // Error
+isLoggedIn = true;
+
 // Arrays
-let names = ["luigi", "mario", "yoshi"];
+let ninjas: string[] = [];
 
-names.push("toad");
-// names.push(3); // Error!
-names[0] = "peach";
-// names[0] = 3; // Error!
+// ninjas.push(10); // Error
+ninjas.push("yoshi");
 
-let numbers = [10, 20, 30, 40];
+// Union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push("hello");
+mixed.push(20);
+mixed.push(false);
+console.log(mixed);
 
-numbers.push(25);
-// numbers.push("shaun"); // Error!
-
-let mixed = ["ken", 4, "chun-li", 8, 9];
-
-mixed.push("ryu");
-mixed.push(10);
-mixed[0] = 3;
-// mixed.push(false); // Error!
+let uid: string | number;
+uid = "123";
+uid = 123;
+// uid = true; // Error
 
 // Objects
-let ninja = {
-  name: "mario",
-  belt: "black",
-  age: 30,
+let ninjaOne: object;
+ninjaOne = { name: "yoshi", age: 30 };
+ninjaOne = []; // Array is an object
+// ninjaOne = "hello"; // Error
+
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColor: string;
 };
 
-ninja.age = 40;
-ninja.name = "ryu";
-// ninja.age = "30"; // Error!
-// ninja.skills = ["fighting", "sneaking"]; // Error!
-
-// If you override the object, you can't add new properties
-ninja = {
-  name: "yoshi",
-  belt: "orange",
-  age: 40,
-  // skills: ["running"], // Error!
-};
+ninjaTwo = { name: "mario", age: 20, beltColor: "black" };
+// ninjaTwo = { name: "mario", age: 20 }; // Error
+// ninjaTwo = { name: "mario", age: 20, beltColor: "black", skills: ["fighting"] }; // Error
