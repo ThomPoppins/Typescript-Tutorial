@@ -1,3 +1,5 @@
+// TODO: Intro to generics tutorial #18
+
 import { Invoice } from "./classes/Invoice.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./interfaces/HasFormatter.js";
