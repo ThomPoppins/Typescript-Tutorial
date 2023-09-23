@@ -1,19 +1,39 @@
-let character = "mario";
-let age = 30;
-let isBlackBelt = false;
+// Arrays
+let names = ["luigi", "mario", "yoshi"];
 
-// character = 20; // error
-character = "luigi"; // no error
+names.push("toad");
+// names.push(3); // Error!
+names[0] = "peach";
+// names[0] = 3; // Error!
 
-// age = "yoshi"; // error
-age = 40; // no error
+let numbers = [10, 20, 30, 40];
 
-// isBlackBelt = "yes"; // error
-isBlackBelt = true; // no error
+numbers.push(25);
+// numbers.push("shaun"); // Error!
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+let mixed = ["ken", 4, "chun-li", 8, 9];
+
+mixed.push("ryu");
+mixed.push(10);
+mixed[0] = 3;
+// mixed.push(false); // Error!
+
+// Objects
+let ninja = {
+  name: "mario",
+  belt: "black",
+  age: 30,
 };
 
-// circ("hello"); // error
-console.log(circ(7.5)); // no error
+ninja.age = 40;
+ninja.name = "ryu";
+// ninja.age = "30"; // Error!
+// ninja.skills = ["fighting", "sneaking"]; // Error!
+
+// If you override the object, you can't add new properties
+ninja = {
+  name: "yoshi",
+  belt: "orange",
+  age: 40,
+  // skills: ["running"], // Error!
+};
