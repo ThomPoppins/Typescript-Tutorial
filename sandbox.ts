@@ -1,44 +1,19 @@
-// Explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+let age: any = 25;
+age = true;
+console.log(age);
+age = "hello";
+console.log(age);
+age = { name: "luigi" };
+console.log(age);
 
-// age = "luigi"; // Error
-age = 30;
-
-// isLoggedIn = 25; // Error
-isLoggedIn = true;
-
-// Arrays
-let ninjas: string[] = [];
-
-// ninjas.push(10); // Error
-ninjas.push("yoshi");
-
-// Union types
-let mixed: (string | number | boolean)[] = [];
-mixed.push("hello");
-mixed.push(20);
+let mixed: any[] = [];
+mixed.push(5);
+mixed.push("mario");
 mixed.push(false);
 console.log(mixed);
 
-let uid: string | number;
-uid = "123";
-uid = 123;
-// uid = true; // Error
-
-// Objects
-let ninjaOne: object;
-ninjaOne = { name: "yoshi", age: 30 };
-ninjaOne = []; // Array is an object
-// ninjaOne = "hello"; // Error
-
-let ninjaTwo: {
-  name: string;
-  age: number;
-  beltColor: string;
-};
-
-ninjaTwo = { name: "mario", age: 20, beltColor: "black" };
-// ninjaTwo = { name: "mario", age: 20 }; // Error
-// ninjaTwo = { name: "mario", age: 20, beltColor: "black", skills: ["fighting"] }; // Error
+let ninja: { name: any; age: any };
+ninja = { name: "yoshi", age: 25 };
+console.log(ninja);
+ninja = { name: 25, age: "yoshi" }; // No error if declared as any
+console.log(ninja);
